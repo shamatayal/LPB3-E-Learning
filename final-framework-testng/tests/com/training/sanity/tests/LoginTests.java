@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
+import com.training.pom.HomePagePOM;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
@@ -40,6 +41,7 @@ public class LoginTests {
 		driver.get(baseUrl);
 	}
 	
+	
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
@@ -47,9 +49,11 @@ public class LoginTests {
 	}
 	@Test
 	public void validLoginTest() {
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
+		loginPOM.sendUserName("shama");
+		loginPOM.sendPassword("shama@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("LoginTests");
 	}
+	
+
 }
