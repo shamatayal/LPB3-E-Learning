@@ -68,7 +68,7 @@ public class GroupChatPOM {
 				}
 	
 	/*Method to write the write Message field on chat window*/
-	public void WriteMessage(String Message) throws InterruptedException {
+	public void WriteMessage(String Message)  {
 		driver.manage().window().maximize();
 		Set<String> st = driver.getWindowHandles();
 		Iterator<String> is = st.iterator();
@@ -76,13 +76,11 @@ public class GroupChatPOM {
 		String chat = is.next();
 		driver.switchTo().window(chat);
 		this.writeMessage.sendKeys(Message);
-	
-				}
+					}
 	/*Method to click on send Message button on chat window*/
 	public void sendMessageBtn()  {
 			this.sendMessageBtn.click();
-		
-				}
+						}
 	/*Method to verify the message text on  chat window*/
 	public  String verifyMessageText() {
 		// TODO Auto-generated method stub

@@ -2,32 +2,44 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="87726" started-at="2019-07-10T03:24:31Z" finished-at="2019-07-10T03:25:59Z">
+  <suite name="Default suite" duration-ms="19390" started-at="2019-07-10T13:01:39Z" finished-at="2019-07-10T13:01:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="87726" started-at="2019-07-10T03:24:31Z" finished-at="2019-07-10T03:25:59Z">
-      <class name="com.training.sanity.tests.Assignment_ELTC_043">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.Assignment_ELTC_043@16c0663d]" name="setUpBeforeClass" is-config="true" duration-ms="27133" started-at="2019-07-10T08:54:31Z" finished-at="2019-07-10T08:54:58Z">
+    <test name="Default test" duration-ms="19390" started-at="2019-07-10T13:01:39Z" finished-at="2019-07-10T13:01:59Z">
+      <class name="com.training.sanity.tests.GroupChat_ELTC_045">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="setUpBeforeClass" is-config="true" duration-ms="6236" started-at="2019-07-10T18:31:39Z" finished-at="2019-07-10T18:31:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.Assignment_ELTC_043@16c0663d]" name="validLoginTest" duration-ms="12258" started-at="2019-07-10T08:54:58Z" finished-at="2019-07-10T08:55:11Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="setUp" is-config="true" duration-ms="1" started-at="2019-07-10T18:31:45Z" finished-at="2019-07-10T18:31:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="validLoginTest" duration-ms="2609" started-at="2019-07-10T18:31:45Z" finished-at="2019-07-10T18:31:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="validAssignmentUploadTest()[pri:1, instance:com.training.sanity.tests.Assignment_ELTC_043@16c0663d]" name="validAssignmentUploadTest" duration-ms="41211" started-at="2019-07-10T08:55:11Z" finished-at="2019-07-10T08:55:52Z">
+        <test-method status="PASS" signature="groupChatTest()[pri:1, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="groupChatTest" duration-ms="7443" started-at="2019-07-10T18:31:48Z" finished-at="2019-07-10T18:31:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validAssignmentUploadTest -->
-        <test-method status="PASS" signature="validLogoutTest()[pri:2, instance:com.training.sanity.tests.Assignment_ELTC_043@16c0663d]" name="validLogoutTest" duration-ms="5664" started-at="2019-07-10T08:55:52Z" finished-at="2019-07-10T08:55:57Z">
+        </test-method> <!-- groupChatTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="setUp" is-config="true" duration-ms="0" started-at="2019-07-10T18:31:48Z" finished-at="2019-07-10T18:31:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="setUp" is-config="true" duration-ms="1" started-at="2019-07-10T18:31:55Z" finished-at="2019-07-10T18:31:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validLogoutTest()[pri:2, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="validLogoutTest" duration-ms="2247" started-at="2019-07-10T18:31:55Z" finished-at="2019-07-10T18:31:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLogoutTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.Assignment_ELTC_043@16c0663d]" name="tearDown" is-config="true" duration-ms="1437" started-at="2019-07-10T08:55:57Z" finished-at="2019-07-10T08:55:59Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.GroupChat_ELTC_045@23223dd8]" name="tearDown" is-config="true" duration-ms="836" started-at="2019-07-10T18:31:58Z" finished-at="2019-07-10T18:31:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.Assignment_ELTC_043 -->
+      </class> <!-- com.training.sanity.tests.GroupChat_ELTC_045 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -24,8 +24,6 @@ public class ForumPOM {
 	@FindBy(xpath="//a[@title = 'Rock']")
 	private WebElement groupName; 
 	
-	
-
 	/* Create Thread icon */
 	@FindBy(xpath="	//img[@title = 'Create thread']")
 	private WebElement createThread; 
@@ -35,11 +33,11 @@ public class ForumPOM {
 	
 
 	/* Text Iframe Create Thread Form */
-	@FindBy(xpath="//iframe[@title='Rich Text Editor, post_text']")
+	@FindBy(xpath="//iframe[@class ='cke_wysiwyg_frame cke_reset']")
 	public WebElement textIframe; 
 	
 	/* Text Field on Create Thread Form */
-	@FindBy(xpath="//body[@class ='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']/p")
+	@FindBy(xpath="/html/body")
 	private WebElement textField; 
 	
 	
@@ -48,6 +46,23 @@ public class ForumPOM {
 	private WebElement createThreadBtn; 
 	
 	
+	/* Reply to this message button  on Thread page */
+	@FindBy(xpath ="//a[@class='btn btn-primary']")
+	private WebElement replyToThisMsgBtn; 
+
+	/* Text Field on reply Thread Form */
+	@FindBy(xpath="	/html/body[@class ='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']")
+	private WebElement replyTextField;
+	
+	
+	/* Reply to this message button  on  reply Thread Form */
+	@FindBy(xpath="//button[@id='thread_SubmitPost']")
+	private WebElement replyMsgBtn;
+	
+
+	/* Successful reply text  on  reply Thread Form */
+	@FindBy(xpath="	//div[@class ='alert alert-success']")
+	private WebElement replytext;
 	/*Method to click on Assigned Rock(group name)*/
 	public void clickGroupName() {
 		this.groupName.click();
@@ -64,24 +79,39 @@ public class ForumPOM {
 			this.titleThread.sendKeys(title);
 		}
 
+	/*Method to switch to Text iframe  on Create Thread Form*/
+	public void switchiframe() throws InterruptedException {
+				driver.switchTo().frame(textIframe);
+	}
+	
 	/*Method to send Text to Text Field  on Create Thread Form*/
-	public void sendTextField(String text) throws InterruptedException {
-		Thread.sleep(6000);
-		driver.switchTo().frame(textIframe);
-		System.out.println("Frame Switvched");
-		//this.textIframe.click();
-		//this.textIframe.sendKeys(text);
-		this.textField.click();
-		System.out.println("clicked");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//head//title[@data-cke-title = 'Rich Text Editor, post_text']//parent::head//following-sibling::body/p")).sendKeys(text);
-		//this.textField.sendKeys(text);
-		}
+	public void sendTextField(String text) {
+			this.textField.sendKeys(text);
+			}
 	
 	/*Method to click on create Thread Button  on Create Thread Form*/
 	public void createThreadBtn() {
+		driver.switchTo().parentFrame();
 		this.createThreadBtn.click();
 		}
-
 	
+	/*Method to click on Reply to this message Button  on Create Thread Form*/
+	public void replyToThisMsgBtn() {
+		this.replyToThisMsgBtn.click();
+		}
+	/*Method to send Text to Reply Text Field  on reply Thread Form*/
+	public void sendReplyTextField(String text) {
+		this.replyTextField.sendKeys(text);
+			}
+	
+	/*Method to click on reply Button  on reply Form*/
+	public void clickReplyBtn() {
+		driver.switchTo().parentFrame();
+		this.replyMsgBtn.click();
+		}
+	
+		/*Method to verify reply has been added */
+	public String replyAddedText() {
+		return this.replytext.getText();
+		}
 }

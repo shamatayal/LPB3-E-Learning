@@ -40,9 +40,8 @@ public class ForumDiscussion_ELTC_044 {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
-		
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		driver.manage().timeouts().implicitlyWait(100,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		loginPOM = new LoginPOM(driver); 
 		homePagePOM = new HomePagePOM(driver);
 		myCoursesPOM = new MyCoursesPOM(driver);
@@ -53,21 +52,16 @@ public class ForumDiscussion_ELTC_044 {
 		driver.get(baseUrl);
 	}
 
-	@BeforeMethod
-	public void setUp() throws Exception {
-
-	}
-	
-	
+		
 	@AfterClass
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
+		
 		driver.quit();
 	}
 	@Test (priority =0)
 	public void validLoginTest() {
-		loginPOM.sendUserName("shama");
-		loginPOM.sendPassword("shama@123");
+		loginPOM.sendUserName("divij1");
+		loginPOM.sendPassword("divij@123");
 		loginPOM.clickLoginBtn(); 
 		screenShot.captureScreenShot("LoginELTC_044");
 	
@@ -81,21 +75,26 @@ public class ForumDiscussion_ELTC_044 {
 		myCoursesPOM.clickSubscribedCourse();// Click on Subscribed Course
 		myCoursesPOM.clickForumIcon();// Click on Forum Icon
 		screenShot.captureScreenShot("Group forums pageELTC_044");
-		forumPOM.clickGroupName();
-		forumPOM.clickCreateThread();
-		forumPOM.sendTitleText("123text");
-		
-		forumPOM.sendTextField("Need Help");// NOT WORKING AS THIS FIELD IS NOT INTERACTABLE
-		/*Thread.sleep(3000);
-		driver.switchTo().defaultContent();
-		Thread.sleep(3000);
-		forumPOM.createThreadBtn();*/
+		forumPOM.clickGroupName();//click on Group name
+		forumPOM.clickCreateThread();// click on Create Thread button
+		forumPOM.sendTitleText("text");//Enter title
+		forumPOM.switchiframe();//switch to text iframe
+		forumPOM.sendTextField("Need Help");// Enter text in text field (Relative path is not working only absolute path is working)
+		forumPOM.createThreadBtn();// click on Create thread button
+		screenShot.captureScreenShot("CreateThreadELTC_044");
+		forumPOM.replyToThisMsgBtn();//Click on Reply to this message button
+		forumPOM.switchiframe();//switch to text iframe
+		forumPOM.sendReplyTextField("Take google help");//Enter reply text (Relative path is not working only absolute path is working)
+		forumPOM.clickReplyBtn();//click on reply to this message button
+		screenShot.captureScreenShot("ReplyELTC_044");
+		String replyAddedText = forumPOM.replyAddedText();// get the successful reply message
+		Assert.assertTrue(replyAddedText.contains("The reply has been added"));// verify the reply has been Added
 	}
-	/*
+	
 	@Test (priority =2)
 	public void validLogoutTest() {
-	homePagePOM.clickUserDropdown();
-	homePagePOM.clicklogoutBtn();
-		screenShot.captureScreenShot("LogoutELTC_044");
-	}*/
+	homePagePOM.clickUserDropdown();// click on user drop down
+	homePagePOM.clicklogoutBtn();//click on logout button 
+		screenShot.captureScreenShot("LogoutELTC_044");// capture logout screenshot
+	}
 }

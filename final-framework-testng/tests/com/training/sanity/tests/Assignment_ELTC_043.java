@@ -66,8 +66,8 @@ public class Assignment_ELTC_043 {
 	}
 	@Test (priority =0)
 	public void validLoginTest() {
-		loginPOM.sendUserName("shama");//enterUser id 
-		loginPOM.sendPassword("shama@123");// enter password
+		loginPOM.sendUserName("Divij");//enterUser id 
+		loginPOM.sendPassword("Divij@123");// enter password
 		loginPOM.clickLoginBtn(); //click on login button 
 		screenShot.captureScreenShot("LoginELTC_043");// capture login screenshot
 	
@@ -97,6 +97,6 @@ public class Assignment_ELTC_043 {
 	public void validLogoutTest() {
 	homePagePOM.clickUserDropdown();// click on user dropdown
 	homePagePOM.clicklogoutBtn();//click on logout button 
-		screenShot.captureScreenShot("LogoutELTC_043");// capture loggout screenshot
+		screenShot.captureScreenShot("LogoutELTC_043");// capture logout screenshot
 	}
 }

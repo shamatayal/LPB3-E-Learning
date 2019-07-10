@@ -43,7 +43,7 @@ public class AssignmentPOM {
 	private WebElement uploadBtn;
 	
 	/* Uploaded assignment document name  */
-	@FindBy(xpath="//tr[@id ='8']//td//div[@class ='work-title']")
+	@FindBy(xpath="(//td//div[@class ='work-title'])[1]")
 	private WebElement uploadedAssignmentName;
 	
 	
