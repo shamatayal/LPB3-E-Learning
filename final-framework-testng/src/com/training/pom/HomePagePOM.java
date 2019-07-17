@@ -32,6 +32,12 @@ public class HomePagePOM {
 	
 	private WebElement welcomeText;
 	
+	//Administration tab 
+	@FindBy (xpath = "//a[@title = 'Administration']")
+	
+	private WebElement administration;
+	
+	
 	public void clickUserDropdown() {
 		this.userDropdown.click();
 	
@@ -53,6 +59,9 @@ public class HomePagePOM {
 	public String getWelcomeText() {
 		return this.welcomeText.getText(); 
 	}
-	
+	//Method to click on Administration Tab 
+	public void clickAdministration() {
+		this.administration.click(); 
+	}
 	
 }

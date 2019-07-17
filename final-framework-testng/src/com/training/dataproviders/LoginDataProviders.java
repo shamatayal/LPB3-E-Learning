@@ -32,7 +32,17 @@ public class LoginDataProviders {
 	
 	@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
-		String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; 
+		String fileName ="C:\\Users\\SHAMATAYAL\\git\\LPB3-E-Learning\\final-framework-testng\\Test Data\\Test_Data.xlsx"; 
+		//String sheetname="ELTD_068";
+		return new ApachePOIExcelRead().getExcelContent(fileName); 
+	}
+	
+	@DataProvider(name = "excel-inputs123")
+	public Object[][] getExcelDataNotUsed(){
+		System.out.println("dataprovider is called ");
+		String fileName ="C:\\Users\\SHAMATAYAL\\git\\LPB3-E-Learning\\final-framework-testng\\Test Data\\Test_Data.xlsx"; 
+		String SheetName = "ELTD_068";
+		
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
 	}
 	
